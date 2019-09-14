@@ -79,7 +79,6 @@ class BsegController extends Controller{
         return $response2;
 
     }
-    public function 
 
 }
 
