@@ -1,0 +1,14 @@
+{
+    "google":{
+        "bigquery":{
+            "projectId":"pit-analytics-2019"
+        }
+    },
+    "app":{
+
+        "name":"demo-septiembre",
+        "url":"http://localhost/skeleton/public"
+
+    }
+
+}
