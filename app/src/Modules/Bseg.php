@@ -108,5 +108,18 @@ class Bseg extends Connection{
 
   }
 
+  public function cuenta(){
+
+    $month=$this->bigquery->query(
+      "SELECT
+      DISTINCT(cuenta)
+    FROM
+      `pit-analytics-2019.MULTIVA.bsegaiolte`
+      ORDER BY cuenta"
+    );
+    return $month;
+
+  }
+
 }
 ?>
