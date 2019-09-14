@@ -30,7 +30,7 @@ $container['bseg']=function($container){
 
     return function($config){
 
-        return App\Modules\Pac::instanciate($config);
+        return App\Modules\Bseg::instanciate($config);
 
     };
 
