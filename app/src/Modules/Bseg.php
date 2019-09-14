@@ -24,7 +24,7 @@ class Bseg extends Connection{
     
 
     $index=$this->bigquery->query(
-      "SELECT CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2)) AS fecha, DMBTR AS monto, HKONT, SGTXT as texto, AS cuenta FROM `pit-analytics-2019.MULTIVA.bsegaio`");
+      "SELECT CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2)) AS fecha, DMBTR AS monto, HKONT, SGTXT as texto, HKONT AS cuenta FROM `pit-analytics-2019.MULTIVA.bsegaio`");
 
     return $index;
 
