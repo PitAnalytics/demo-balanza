@@ -58,9 +58,9 @@ class BsegController extends Controller{
     }
     public function ceco(){
 
-        $index=$this->modules['bseg']->ceco();
+        $ceco=$this->modules['bseg']->ceco();
 
-        $response1 = $response->withJson($index,201);
+        $response1 = $response->withJson($ceco,201);
         $response2 = $response1
         ->withHeader('Access-Control-Allow-Origin', '*')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
@@ -69,9 +69,9 @@ class BsegController extends Controller{
     }
     public function cuenta(){
         
-        $index=$this->modules['bseg']->cuenta();
+        $cuenta=$this->modules['bseg']->cuenta();
 
-        $response1 = $response->withJson($index,201);
+        $response1 = $response->withJson($cuenta,201);
         $response2 = $response1
         ->withHeader('Access-Control-Allow-Origin', '*')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');

@@ -71,53 +71,53 @@ class Bseg extends Connection{
 
   public function superConcepto(){
 
-    $month=$this->bigquery->query(
+    $superConcepto=$this->bigquery->query(
       "SELECT
       DISTINCT(superConcepto)
     FROM
       `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY superConcepto"
     );
-    return $month;
+    return $superConcepto;
 
   }
 
   public function ceco(){
 
-    $month=$this->bigquery->query(
+    $ceco=$this->bigquery->query(
       "SELECT
       DISTINCT(ceco)
     FROM
       `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY ceco"
     );
-    return $month;
+    return $ceco;
 
   }
 
   public function sociedad(){
 
-    $month=$this->bigquery->query(
+    $sociedad=$this->bigquery->query(
       "SELECT
       DISTINCT(sociedad)
     FROM
       `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY sociedad"
     );
-    return $month;
+    return $sociedad;
 
   }
 
   public function cuenta(){
 
-    $month=$this->bigquery->query(
+    $cuenta=$this->bigquery->query(
       "SELECT
       DISTINCT(cuenta)
     FROM
       `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY cuenta"
     );
-    return $month;
+    return $cuenta;
 
   }
 
