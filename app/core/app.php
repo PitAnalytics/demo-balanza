@@ -28,6 +28,7 @@ $app->get('/api/bseg', \App\Controllers\BsegController::class.':index');
 $app->get('/api/bseg/fecha', \App\Controllers\BsegController::class.':fecha');
 $app->get('/api/bseg/cuenta', \App\Controllers\BsegController::class.':cuenta');
 $app->get('/api/bseg/sociedad', \App\Controllers\BsegController::class.':sociedad');
+$app->get('/api/bseg/ceco', \App\Controllers\BsegController::class.':ceco');
 //
 /******************/
 /****EJECUTAMOS****/
