@@ -23,23 +23,20 @@ class Bseg extends Connection{
     public function index(){
       
       $index=$this->bigquery->query(
-        "SELECT
-        Cuenta.id AS idConcepto,
-        Bseg.BUKRS AS sociedad,
-        Cuenta.cuenta AS cuenta,
-        Cuenta.superConcepto AS superConcepto,
-        Cuenta.concepto AS concepto,
-        CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2)) AS fecha,
-        Bseg.KOSTL AS ceco,
-        ROUND(CAST(Bseg.DMBTR AS FLOAT64),2) AS monto,
-        Bseg.SGTXT AS texto
+      "SELECT
+        idConcepto,
+        sociedad,
+        cuenta,
+        superConcepto,
+        concepto,
+        fecha,
+        ceco,
+        monto,
+        texto
       FROM
-        `pit-analytics-2019.MULTIVA.cuenta` AS Cuenta
-      INNER JOIN
-        `pit-analytics-2019.MULTIVA.bsegaio` AS Bseg
-      ON
-        Cuenta.cuenta = Bseg.HKONT
-      ORDER BY idConcepto,sociedad,cuenta");
+        `pit-analytics-2019.MULTIVA.bsegaiolte`
+      ORDER BY 
+      idConcepto");
 
       return $index;
 
