@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use Psr\Container\ContainerInterface as Container;
 
-class BegController extends Controller{
+class BwegController extends Controller{
     
     public function __construct(Container $container){
 
