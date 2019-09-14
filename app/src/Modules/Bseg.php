@@ -20,20 +20,36 @@ class Bseg extends Connection{
 
     }
 
-  public function index(){
-    
+    public function index(){
+      
+      $index=$this->bigquery->query(
+        "SELECT
+        Cuenta.id AS idConcepto,
+        Bseg.BUKRS AS sociedad,
+        Cuenta.cuenta AS cuenta,
+        Cuenta.superConcepto AS superConcepto,
+        Cuenta.concepto AS concepto,
+        CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2)) AS fecha,
+        Bseg.KOSTL AS ceco,
+        ROUND(CAST(Bseg.DMBTR AS FLOAT64),2) AS monto,
+        Bseg.SGTXT AS texto
+      FROM
+        `pit-analytics-2019.MULTIVA.cuenta` AS Cuenta
+      INNER JOIN
+        `pit-analytics-2019.MULTIVA.bsegaio` AS Bseg
+      ON
+        Cuenta.cuenta = Bseg.HKONT
+        
+      ORDER BY idConcepto,sociedad,cuenta");
 
-    $index=$this->bigquery->query(
-      "SELECT CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2)) AS fecha, DMBTR AS monto, HKONT, SGTXT as texto, HKONT AS cuenta FROM `pit-analytics-2019.MULTIVA.bsegaio`");
+      return $index;
 
-    return $index;
-
-  }
+    }
 
   public function date(){
 
     $date=$this->bigquery->query(
-      "SELECT CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2)) AS fecha"
+      "SELECT DISTINCT(CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2))) AS fecha"
     );
 
     return $date;
