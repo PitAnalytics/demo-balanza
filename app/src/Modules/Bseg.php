@@ -23,7 +23,7 @@ class Pac extends Connection{
   public function index(){
     
 
-    $index=$this->$bigquery->query("");
+    $index=$this->bigquery->query("SELECT * FROM `pit-analytics-2019.MULTIVA.bsegaio` LIMIT 1000");
 
     return $index;
 
