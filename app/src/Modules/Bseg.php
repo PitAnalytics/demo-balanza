@@ -32,7 +32,9 @@ class Bseg extends Connection{
 
   public function date(){
 
-    $date=$this->bigquery->query("SELECT CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2)) AS fecha");
+    $date=$this->bigquery->query(
+      "SELECT CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2)) AS fecha"
+    );
 
     return $date;
 
