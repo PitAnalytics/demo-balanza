@@ -39,7 +39,6 @@ class Bseg extends Connection{
         `pit-analytics-2019.MULTIVA.bsegaio` AS Bseg
       ON
         Cuenta.cuenta = Bseg.HKONT
-        
       ORDER BY idConcepto,sociedad,cuenta");
 
       return $index;
@@ -51,7 +50,6 @@ class Bseg extends Connection{
     $date=$this->bigquery->query(
       "SELECT DISTINCT(CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2))) AS fecha"
     );
-
     return $date;
 
   }
@@ -59,7 +57,6 @@ class Bseg extends Connection{
   public function month(){
 
     $month=$this->bigquery->query("");
-
     return $month;
 
   }
