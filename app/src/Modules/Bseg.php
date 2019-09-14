@@ -36,7 +36,8 @@ class Bseg extends Connection{
       FROM
         `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY 
-      idConcepto");
+      idConcepto"
+      );
 
       return $index;
 
@@ -45,7 +46,11 @@ class Bseg extends Connection{
   public function date(){
 
     $date=$this->bigquery->query(
-      "SELECT DISTINCT(CONCAT(SUBSTR(BUDAT,0,4),'-',SUBSTR(BUDAT,5,2),'-',SUBSTR(BUDAT,7,2))) AS fecha"
+      "SELECT
+      DISTINCT(fecha)
+    FROM
+      `pit-analytics-2019.MULTIVA.bsegaiolte`
+      ORDER BY fecha"
     );
     return $date;
 
