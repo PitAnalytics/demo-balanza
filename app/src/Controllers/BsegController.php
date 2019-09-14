@@ -31,9 +31,9 @@ class BsegController extends Controller{
 
     }
 
-    public function date($request,$response,$args){
+    public function fecha($request,$response,$args){
 
-        $index=$this->modules['bseg']->date();
+        $index=$this->modules['bseg']->fecha();
 
         $response1 = $response->withJson($index,201);
         $response2 = $response1
@@ -56,6 +56,30 @@ class BsegController extends Controller{
         return $response2;
 
     }
+    public function ceco(){
+
+        $index=$this->modules['bseg']->ceco();
+
+        $response1 = $response->withJson($index,201);
+        $response2 = $response1
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+
+        return $response2;
+    }
+    public function cuenta(){
+        
+        $index=$this->modules['bseg']->cuenta();
+
+        $response1 = $response->withJson($index,201);
+        $response2 = $response1
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+
+        return $response2;
+
+    }
+    public function 
 
 }
 

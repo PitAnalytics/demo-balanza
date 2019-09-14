@@ -43,7 +43,7 @@ class Bseg extends Connection{
 
     }
 
-  public function date(){
+  public function fecha(){
 
     $date=$this->bigquery->query(
       "SELECT
@@ -56,9 +56,54 @@ class Bseg extends Connection{
 
   }
 
-  public function month(){
+  public function concepto(){
 
-    $month=$this->bigquery->query("");
+    $date=$this->bigquery->query(
+      "SELECT
+      DISTINCT(concepto)
+    FROM
+      `pit-analytics-2019.MULTIVA.bsegaiolte`
+      ORDER BY concepto"
+    );
+    return $date;
+
+  }
+
+  public function superConcepto(){
+
+    $month=$this->bigquery->query(
+      "SELECT
+      DISTINCT(superConcepto)
+    FROM
+      `pit-analytics-2019.MULTIVA.bsegaiolte`
+      ORDER BY superConcepto"
+    );
+    return $month;
+
+  }
+
+  public function ceco(){
+
+    $month=$this->bigquery->query(
+      "SELECT
+      DISTINCT(ceco)
+    FROM
+      `pit-analytics-2019.MULTIVA.bsegaiolte`
+      ORDER BY ceco"
+    );
+    return $month;
+
+  }
+
+  public function sociedad(){
+
+    $month=$this->bigquery->query(
+      "SELECT
+      DISTINCT(sociedad)
+    FROM
+      `pit-analytics-2019.MULTIVA.bsegaiolte`
+      ORDER BY sociedad"
+    );
     return $month;
 
   }
