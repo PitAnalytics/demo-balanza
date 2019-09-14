@@ -31,9 +31,22 @@ class BsegController extends Controller{
 
     }
 
-    public function dataSource($request,$response,$args){
+    public function date($request,$response,$args){
 
-        $index=$this->modules['bseg']->dataSource();
+        $index=$this->modules['bseg']->date();
+
+        $response1 = $response->withJson($index,201);
+        $response2 = $response1
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+
+        return $response2;
+
+    }
+
+    public function month($request,$response,$args){
+
+        $index=$this->modules['bseg']->month();
 
         $response1 = $response->withJson($index,201);
         $response2 = $response1

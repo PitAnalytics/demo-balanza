@@ -25,6 +25,7 @@ require_once '../app/core/container.php';
 //
 $app->get('/', \App\Controllers\TestController::class.':wellcome');
 $app->get('/api/bseg', \App\Controllers\BsegController::class.':index');
+$app->get('/api/bseg/date', \App\Controllers\BsegController::class.':date');
 //
 /******************/
 /****EJECUTAMOS****/
