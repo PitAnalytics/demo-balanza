@@ -118,11 +118,7 @@ class Bseg extends Connection{
   public function mes(){
 
     $mes=$this->bigquery->query(
-      "SELECT
-      DISTINCT(cuenta)
-    FROM
-      `pit-analytics-2019.MULTIVA.bsegaiolte`
-      ORDER BY cuenta"
+      "SELECT DISTINCT(CAST(SUBSTR(fecha,6,2) AS INT64)) AS mes FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY cuenta"
     );
     return $mes;
 
