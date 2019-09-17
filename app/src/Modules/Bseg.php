@@ -34,7 +34,7 @@ class Bseg extends Connection{
         ceco,
         monto,
         texto,
-        SUBSTR(fecha,6,2) AS mes
+        CAST(SUBSTR(fecha,6,2) AS INT64) AS mes
       FROM
         `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY 
