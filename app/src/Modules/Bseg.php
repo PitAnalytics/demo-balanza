@@ -70,7 +70,9 @@ class Bseg extends Connection{
 
   public function concepto(){
 
-    $concepto=$this->bigquery->query("SELECT DISTINCT(concepto) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY concepto");
+    $concepto=$this->bigquery->query(
+      "SELECT DISTINCT(idConcepto), concepto FROM `pit-analytics-2019.MULTIVA.cuenta` ORDER BY CAST(idConcepto AS INT64)"
+    );
     return $concepto;
 
   }
