@@ -108,7 +108,7 @@ class BsegController extends Controller{
 
     public function concepto($request,$response,$args){
         
-        $superConcepto=$this->modules['bseg']->superConcepto();
+        $superConcepto=$this->modules['bseg']->concepto();
 
         $response1 = $response->withJson($superConcepto,201);
         $response2 = $response1
