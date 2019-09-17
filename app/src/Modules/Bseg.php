@@ -47,26 +47,14 @@ class Bseg extends Connection{
 
   public function fecha(){
 
-    $fecha=$this->bigquery->query(
-      "SELECT
-      DISTINCT(fecha)
-    FROM
-      `pit-analytics-2019.MULTIVA.bsegaiolte`
-      ORDER BY fecha"
-    );
+    $fecha=$this->bigquery->query("SELECT DISTINCT(fecha) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY fecha");
     return $fecha;
 
   }
 
   public function concepto(){
 
-    $concepto=$this->bigquery->query(
-      "SELECT
-      DISTINCT(concepto)
-    FROM
-      `pit-analytics-2019.MULTIVA.bsegaiolte`
-      ORDER BY concepto"
-    );
+    $concepto=$this->bigquery->query("SELECT DISTINCT(concepto) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY concepto");
     return $concepto;
 
   }
@@ -74,7 +62,7 @@ class Bseg extends Connection{
   public function superConcepto(){
 
     $superConcepto=$this->bigquery->query(
-      "SELECT DISTINCT(superConcepto) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY superConcepto"
+      "SELECT DISTINCT(idSuperConcepto) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY idSuperConcepto"
     );
     return $superConcepto;
 
