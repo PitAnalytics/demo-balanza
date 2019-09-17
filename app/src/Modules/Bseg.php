@@ -46,27 +46,27 @@ class Bseg extends Connection{
 
   public function fecha(){
 
-    $date=$this->bigquery->query(
+    $fecha=$this->bigquery->query(
       "SELECT
       DISTINCT(fecha)
     FROM
       `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY fecha"
     );
-    return $date;
+    return $fecha;
 
   }
 
   public function concepto(){
 
-    $date=$this->bigquery->query(
+    $concepto=$this->bigquery->query(
       "SELECT
       DISTINCT(concepto)
     FROM
       `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY concepto"
     );
-    return $date;
+    return $concepto;
 
   }
 
