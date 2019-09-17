@@ -78,7 +78,7 @@ class Bseg extends Connection{
   public function superConcepto(){
 
     $superConcepto=$this->bigquery->query(
-      "SELECT DISTINCT(idSuperConcepto) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY idSuperConcepto"
+      "SELECT DISTINCT(idSuperConcepto), superConcepto FROM `pit-analytics-2019.MULTIVA.cuenta` ORDER BY idSuperConcepto"
     );
     return $superConcepto;
 
