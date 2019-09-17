@@ -33,9 +33,9 @@ class BsegController extends Controller{
 
     public function fecha($request,$response,$args){
 
-        $index=$this->modules['bseg']->fecha();
+        $fecha=$this->modules['bseg']->fecha();
 
-        $response1 = $response->withJson($index,201);
+        $response1 = $response->withJson($fecha,201);
         $response2 = $response1
         ->withHeader('Access-Control-Allow-Origin', '*')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
@@ -46,9 +46,9 @@ class BsegController extends Controller{
 
     public function month($request,$response,$args){
 
-        $index=$this->modules['bseg']->month();
+        $month=$this->modules['bseg']->month();
 
-        $response1 = $response->withJson($index,201);
+        $response1 = $response->withJson($month,201);
         $response2 = $response1
         ->withHeader('Access-Control-Allow-Origin', '*')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
