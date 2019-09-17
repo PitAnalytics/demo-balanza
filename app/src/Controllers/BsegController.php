@@ -44,11 +44,11 @@ class BsegController extends Controller{
 
     }
 
-    public function month($request,$response,$args){
+    public function mes($request,$response,$args){
 
-        $month=$this->modules['bseg']->month();
+        $mes=$this->modules['bseg']->mes();
 
-        $response1 = $response->withJson($month,201);
+        $response1 = $response->withJson($mes,201);
         $response2 = $response1
         ->withHeader('Access-Control-Allow-Origin', '*')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');

@@ -99,11 +99,11 @@ class Bseg extends Connection{
   public function sociedad(){
 
     $sociedad=$this->bigquery->query(
-      "SELECT
-      DISTINCT(sociedad)
-    FROM
+      "SELECT 
+      DISTINCT(sociedad) 
+    FROM 
       `pit-analytics-2019.MULTIVA.bsegaiolte`
-      ORDER BY sociedad"
+      ORDER BY sociedad" 
     );
     return $sociedad;
 
