@@ -56,7 +56,7 @@ class BsegController extends Controller{
         return $response2;
 
     }
-    public function ceco(){
+    public function ceco($request,$response,$args){
 
         $ceco=$this->modules['bseg']->ceco();
 
@@ -67,7 +67,7 @@ class BsegController extends Controller{
 
         return $response2;
     }
-    public function cuenta(){
+    public function cuenta($request,$response,$args){
         
         $cuenta=$this->modules['bseg']->cuenta();
 
