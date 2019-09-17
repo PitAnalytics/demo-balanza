@@ -30,6 +30,7 @@ $app->get('/api/bseg/cuenta', \App\Controllers\BsegController::class.':cuenta');
 $app->get('/api/bseg/sociedad', \App\Controllers\BsegController::class.':sociedad');
 $app->get('/api/bseg/ceco', \App\Controllers\BsegController::class.':ceco');
 $app->get('/api/bseg/mes', \App\Controllers\BsegController::class.':mes');
+$app->get('/api/bseg/super-concepto', \App\Controllers\BsegController::class.':superConcepto');
 //
 /******************/
 /****EJECUTAMOS****/

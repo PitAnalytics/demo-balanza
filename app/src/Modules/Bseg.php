@@ -74,11 +74,7 @@ class Bseg extends Connection{
   public function superConcepto(){
 
     $superConcepto=$this->bigquery->query(
-      "SELECT
-      DISTINCT(superConcepto)
-    FROM
-      `pit-analytics-2019.MULTIVA.bsegaiolte`
-      ORDER BY superConcepto"
+      "SELECT DISTINCT(superConcepto) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY superConcepto"
     );
     return $superConcepto;
 
@@ -86,40 +82,28 @@ class Bseg extends Connection{
 
   public function ceco(){
 
-    $ceco=$this->bigquery->query(
-      "SELECT DISTINCT(ceco) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY ceco"
-    );
+    $ceco=$this->bigquery->query("SELECT DISTINCT(ceco) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY ceco");
     return $ceco;
 
   }
 
   public function sociedad(){
 
-    $sociedad=$this->bigquery->query(
-      "SELECT DISTINCT(sociedad) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY sociedad" 
-    );
+    $sociedad=$this->bigquery->query("SELECT DISTINCT(sociedad) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY sociedad");
     return $sociedad;
 
   }
 
   public function cuenta(){
 
-    $cuenta=$this->bigquery->query(
-      "SELECT
-      DISTINCT(cuenta)
-    FROM
-      `pit-analytics-2019.MULTIVA.bsegaiolte`
-      ORDER BY cuenta"
-    );
+    $cuenta=$this->bigquery->query("SELECT DISTINCT(cuenta) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY cuenta");
     return $cuenta;
 
   }
 
   public function mes(){
 
-    $mes=$this->bigquery->query(
-      "SELECT DISTINCT(CAST(SUBSTR(fecha,6,2) AS INT64)) AS mes FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY mes"
-    );
+    $mes=$this->bigquery->query("SELECT DISTINCT(CAST(SUBSTR(fecha,6,2) AS INT64)) AS mes FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY mes");
     return $mes;
 
   }
