@@ -27,6 +27,7 @@ class Bseg extends Connection{
         idConcepto,
         sociedad,
         cuenta,
+        idSuperConcepto,
         superConcepto,
         concepto,
         fecha,
