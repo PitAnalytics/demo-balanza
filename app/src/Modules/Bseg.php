@@ -41,6 +41,10 @@ class Bseg extends Connection{
       idConcepto"
       );
 
+      for ($i=1; $i <=count($index); $i++) { 
+        $index[$i]['_id']=$i;
+      }
+
       return $index;
 
     }
