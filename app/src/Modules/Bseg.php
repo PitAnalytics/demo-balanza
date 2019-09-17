@@ -28,8 +28,6 @@ class Bseg extends Connection{
         sociedad,
         cuenta,
         idSuperConcepto,
-        superConcepto,
-        concepto,
         fecha,
         ceco,
         monto,
