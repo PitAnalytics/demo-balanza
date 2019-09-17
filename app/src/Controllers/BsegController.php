@@ -82,9 +82,9 @@ class BsegController extends Controller{
     
     public function sociedad($request,$response,$args){
         
-        $cuenta=$this->modules['bseg']->cuenta();
+        $sociedad=$this->modules['bseg']->sociedad();
 
-        $response1 = $response->withJson($cuenta,201);
+        $response1 = $response->withJson($sociedad,201);
         $response2 = $response1
         ->withHeader('Access-Control-Allow-Origin', '*')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
