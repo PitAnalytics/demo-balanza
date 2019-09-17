@@ -79,6 +79,19 @@ class BsegController extends Controller{
         return $response2;
 
     }
+    
+    public function sociedad($request,$response,$args){
+        
+        $cuenta=$this->modules['bseg']->cuenta();
+
+        $response1 = $response->withJson($cuenta,201);
+        $response2 = $response1
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+
+        return $response2;
+
+    }
 
 }
 

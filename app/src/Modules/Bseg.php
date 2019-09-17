@@ -33,7 +33,8 @@ class Bseg extends Connection{
         fecha,
         ceco,
         monto,
-        texto
+        texto,
+        SUBSTR(fecha,6,2) AS mes
       FROM
         `pit-analytics-2019.MULTIVA.bsegaiolte`
       ORDER BY 
@@ -111,6 +112,19 @@ class Bseg extends Connection{
       ORDER BY cuenta"
     );
     return $cuenta;
+
+  }
+
+  public function mes(){
+
+    $mes=$this->bigquery->query(
+      "SELECT
+      DISTINCT(cuenta)
+    FROM
+      `pit-analytics-2019.MULTIVA.bsegaiolte`
+      ORDER BY cuenta"
+    );
+    return $mes;
 
   }
 
