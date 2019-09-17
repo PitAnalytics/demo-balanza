@@ -86,11 +86,7 @@ class Bseg extends Connection{
   public function ceco(){
 
     $ceco=$this->bigquery->query(
-      "SELECT
-      DISTINCT(ceco)
-    FROM
-      `pit-analytics-2019.MULTIVA.bsegaiolte`
-      ORDER BY ceco"
+      "SELECT DISTINCT(ceco) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY ceco"
     );
     return $ceco;
 
@@ -99,11 +95,7 @@ class Bseg extends Connection{
   public function sociedad(){
 
     $sociedad=$this->bigquery->query(
-      "SELECT 
-      DISTINCT(sociedad) 
-    FROM 
-      `pit-analytics-2019.MULTIVA.bsegaiolte`
-      ORDER BY sociedad" 
+      "SELECT DISTINCT(sociedad) FROM `pit-analytics-2019.MULTIVA.bsegaiolte` ORDER BY sociedad" 
     );
     return $sociedad;
 
